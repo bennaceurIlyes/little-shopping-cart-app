@@ -1,0 +1,148 @@
+/* Cards container */
+#cards {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+/* Single card */
+.card {
+  width: 220px;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  padding: 18px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-color: #3498db;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Button */
+.card .btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+  margin-top: 12px;
+}
+
+.card .btn:hover {
+  background: linear-gradient(135deg, #4aa3e0, #1c6fa5);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.card .btn:active {
+  transform: scale(0.96);
+}
+
+/* Sidebar */
+#sidebare {
+  position: fixed;
+  top: 0;
+  right: -290px;
+  width: 280px;
+  height: 100%;
+  background: #ffffff;
+  border-left: 2px solid #eaeaea;
+  box-shadow: -4px 0 14px rgba(0,0,0,0.1);
+  transition: right 0.35s ease;
+  padding: 25px 20px;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+#sidebare.active {
+  right: 0;
+}
+
+/* Toggle button */
+#toggle {
+  position: absolute;
+  top: 15px;
+  left: -70px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: left 0.3s ease, background 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#toggle:hover {
+  background: linear-gradient(135deg, #1d8bff, #004999);
+}
+
+#sidebare.active #toggle {
+  left: 15px;
+}
+
+/* List inside sidebar */
+#list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  max-height: calc(100% - 140px); /* leaves space for total */
+  overflow-y: auto;
+}
+
+#list li {
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+#list li:hover {
+  background: #e9f3ff;
+  transform: translateX(5px);
+}
+
+/* Total always visible */
+#total-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.08);
+}
