@@ -28,5 +28,47 @@
     "name": "Gaming Mouse",
     "price": 39.99,
     "image": "https://images.unsplash.com/photo-1587202372775-98926d8b0f01?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 6,
+    "name": "T-Shirt",
+    "price": 19.99,
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Sneakers",
+    "price": 89.99,
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Jeans",
+    "price": 49.99,
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 9,
+    "name": "Apple",
+    "price": 1.99,
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Banana",
+    "price": 0.99,
+    "image": "https://images.unsplash.com/photo-1574226516831-e1dff420e43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 11,
+    "name": "Orange",
+    "price": 1.49,
+    "image": "https://images.unsplash.com/photo-1612197527893-4e2b2d6e7a3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+  },
+  {
+    "id": 12,
+    "name": "Water Bottle",
+    "price": 14.99,
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   }
 ]

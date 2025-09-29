@@ -1,12 +1,12 @@
 const cards = document.getElementById("cards");
 const list = document.getElementById("list");
 const totalBox = document.getElementById("total-box");
-
+let product  = []
 async function getdata() {
   try {
     const response = await fetch("products.json");
     const data = await response.json();
-
+    product = data
     data.forEach(d => {
       print(d.name, d.price, d.image);
     });
@@ -61,3 +61,29 @@ toggleBtn.addEventListener("click", () => {
 // Init
 getdata();
 totale();
+const inp = document.getElementById("inp");
+const get = document.getElementById("get");
+  function filter(){
+    let search = inp.value.trim().toLowerCase() ;
+    const result = product.filter(p => p.name.toLowerCase().includes(search)) ; 
+    if (result.length >0){
+      cards.innerHTML = `` ; 
+      result.forEach(r =>print(r.name , r.price , r.image))
+    }
+  }
+  get.addEventListener("click" , filter) ;
+const sort = document.getElementById("sort");
+function trie(){
+  cards.innerHTML = `` ; 
+  let sorted = [...product];
+     if(sort.value == "price-low"){
+      sorted.sort((a , b ) => a.price - b.price) ;
+
+     }else if(sort.value =="price-hieght"){
+      sorted.sort((a,b) => b.price - a.price);
+     }else{
+      sorted.sort((a, b) => a.name.localeCompare(b.name));
+     }
+     sorted.forEach(r =>print(r.name , r.price , r.image))
+}
+sort.addEventListener("change" , trie)

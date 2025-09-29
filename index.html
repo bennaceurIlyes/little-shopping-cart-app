@@ -7,12 +7,20 @@
   <title>Cart</title>
 </head>
 <body>
+  <div class="controls">
+  <select id="sort">
+    <option value="default">default</option>
+    <option value="price-low">price : low to hight </option>
+    <option value="price-hieght">price : hight to low</option>
+    <option value="name">A-Z</option>
+  </select></div>
+   <button id="toggle">☰ Open</button>
   <div id="sidebare">
-    <button id="toggle">☰ Open</button>
     <ul id="list"></ul>
     <div id="total-box">Total: $0</div>
   </div>
-
+  <div id="filter"><input type="text" id="inp"><button id="get">filter</button></div>
+   
   <div id="cards"></div>
 
   <script src="script.js"></script>
