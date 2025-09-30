@@ -31,18 +31,27 @@ function addtocart(name, price) {
   let product = { name: name, price: Number(price) };
   cart.push(product);
   localStorage.setItem("cart", JSON.stringify(cart));
+  const notification = document.getElementById("notification") ; 
+  let text = document.createElement("div");
+  text.textContent = "you add product to card";
+  text.className = "toast";
+      notification.appendChild(text)
   totale();
 }
 
 function totale() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  list.innerHTML = ""; // clear list
+  list.innerHTML = ""; 
 
   const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
 
-  cart.forEach(ca => {
+  cart.forEach((ca, index ) => {
+    const b = document.createElement("button") ; 
+   
     let li = document.createElement("li");
-    li.textContent = `${ca.name} - $${ca.price}`;
+    li.innerHTML= `${ca.name} - $${ca.price} 
+    <span class="remove" data-index="${index}" style="cursor:pointer; color:red; margin-left:10px;">❌</span>
+    `;
     list.appendChild(li);
   });
 
@@ -65,6 +74,11 @@ const inp = document.getElementById("inp");
 const get = document.getElementById("get");
   function filter(){
     let search = inp.value.trim().toLowerCase() ;
+    if (search === "") {
+    cards.innerHTML = "";
+    product.forEach(p => print(p.name, p.price, p.image));
+    return;
+  }
     const result = product.filter(p => p.name.toLowerCase().includes(search)) ; 
     if (result.length >0){
       cards.innerHTML = `` ; 
@@ -86,4 +100,20 @@ function trie(){
      }
      sorted.forEach(r =>print(r.name , r.price , r.image))
 }
-sort.addEventListener("change" , trie)
+sort.addEventListener("change" , trie) ; 
+list.addEventListener("click" , (e)=>{
+  if(e.target.classList.contains("remove")){
+    let c  = JSON.parse(localStorage.getItem("cart")) ||[] ; 
+    c.splice(e.target.dataset.index , 1)
+    localStorage.setItem("cart" , JSON.stringify(c));
+    totale();
+  }
+})
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+inp.addEventListener("input", debounce(filter, 300));
